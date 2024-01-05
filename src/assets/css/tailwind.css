@@ -1,0 +1,202 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import '/src/css/custom.css';
+
+@layer base {
+    html {
+        font-family: 'Tahoma', system-ui, sans-serif;
+    }
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+@layer components {
+    .card {
+        @apply flex items-center justify-center flex-col gap-2 p-5 w-full sm:w-72 h-full bg-[#F5F2F0]  rounded-2xl;
+    }
+
+    .padding-x-layout {
+        @apply 2xl:px-[6rem];
+    }
+}
+
+img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    object-position: center;
+}
+
+input:checked ~ .dot {
+    transform: translateX(100%);
+    /* background-color: #132b50; */
+}
+
+.blur-load {
+    background-size: cover;
+    background-position: center;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+form.htmx-request {
+    opacity: 0.5;
+    transition: opacity 300ms linear;
+}
+
+.htmx-indicator {
+    display: none;
+}
+.htmx-request .htmx-indicator {
+    display: inline;
+}
+.htmx-request.htmx-indicator {
+    display: inline;
+}
+
+#default-search:focus-visible {
+    outline: none !important;
+}
+
+.border-custom::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 6px;
+    width: 80%;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: #ff3e54;
+}
+
+.border-ct::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 6px;
+    width: 4%;
+    top: -20;
+    background: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+    left: 48%;
+}
+
+.text-gradient {
+    background: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient:hover {
+    background: linear-gradient(225deg, #a05764 0%, #b778d2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Slider */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+.slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.slider::before {
+    left: 0;
+    top: 0;
+}
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.slider .slide {
+    height: 100px;
+    width: 250px;
+}
+
+.mouse-follower {
+    width: 50px;
+    height: 50px;
+    background-color: #3490dc;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    transition: transform 0.1s linear; /* Thêm chuyển đổi */
+}
+
+/* Thêm kiểu cho hình thoi */
+.mouse-follower.landing {
+    width: 20px;
+    height: 20px;
+    background-color: #38a169;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: rotate(0deg); /* Khởi tạo góc xoay ban đầu */
+    transition: transform 0.1s linear; /* Thêm chuyển đổi */
+}

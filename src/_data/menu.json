@@ -1,0 +1,26 @@
+[
+  {
+    "url": "/",
+    "label": "Trang Chủ"
+  },
+  {
+    "url": "/members",
+    "label": "Thành viên"
+  },
+  {
+    "url": "/posts",
+    "label": "Bài viết"
+  },
+  {
+    "url": "/events",
+    "label": "Sự kiện"
+  },
+  {
+    "url": "/about",
+    "label": "Về chúng tôi"
+  },
+  {
+    "url": "/contact",
+    "label": "Liên hệ"
+  }
+]

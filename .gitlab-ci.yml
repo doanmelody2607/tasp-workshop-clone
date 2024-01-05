@@ -1,0 +1,41 @@
+stages:
+  - pull
+  - build
+  - deploy
+
+pull:
+  stage: pull
+  tags:
+    - windows-gitlab
+  script:
+    - cd "D:\GitLab-Runner\builds\sN3zxnhb\0\asp\tasp-workshop"
+    - robocopy "D:\GitLab-Runner\builds\sN3zxnhb\0\asp\tasp-workshop" 
+      "D:\codepull\asp\tasp-workshop" /COPYALL /B /SEC /MIR /R:0 /W:0 /NFL /NDL 
+      /XD "D:\GitLab-Runner\builds\sN3zxnhb\0\asp\tasp-workshop\.git" 
+      "D:\codepull\asp\tasp-workshop\node_modules"; exit 0
+    - echo "xong"
+  only:
+    - main
+build:
+  stage: build
+  tags:
+    - windows-gitlab
+  script:
+    - cd "D:\codepull\asp\tasp-workshop"
+    - npm run build
+    - cd "D:\codepull\asp\tasp-workshop\public"
+    - robocopy "D:\codepull\asp\tasp-workshop\public"
+      "D:\productASP\ASP\tasp-workshop\public" /COPYALL /B /SEC /MIR /R:0 /W:0 /NFL /NDL 
+      /XF "web.config" ;exit 0
+    - echo "xong"
+  only:
+    - main
+deploy:
+  stage: deploy
+  tags:
+    - windows-gitlab
+  script:
+    - cd "D:\productASP\ASP\tasp-workshop\public"
+    - echo "xong"
+  only:
+    - main

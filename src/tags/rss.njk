@@ -1,0 +1,17 @@
+---
+layout: ''
+eleventyExcludeFromCollections: true
+pagination:
+    data: collections.allPageByTags
+    size: 1
+    alias: paged
+eleventyComputed:
+  metadata:
+      title: "Tag | {{paged.tagName | capitalize}}"
+      url: "/tags/{{ paged.tagName }}"
+      language: "vi"
+      type: "tags"
+      
+permalink: "tags/{{ paged.tagName | slugify }}/index.xml"
+---
+{% include "partials/posts-rss.njk" %}

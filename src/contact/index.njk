@@ -1,0 +1,219 @@
+<section>
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-[300px]">
+        <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+            alt=""
+            class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+        <div
+            class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+            aria-hidden="true">
+            <div
+                class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4%
+                    68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div
+            class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0
+                sm:transform-gpu"
+            aria-hidden="true">
+            <div
+                class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4%
+                    68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Hãy liên lạc với  chúng tôi
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <div class=" mx-auto p-5">
+            <div class="text-center mb-16 ">
+                <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
+                    Thông tin liên hệ
+                </p>
+                <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight max-w-2xl mx-auto prose dark:prose-invert">
+                    Hãy để lại thông tin,
+                    <span class="text-blue-400">ASP</span>
+                    chúng tôi sẽ liên hệ lại bạn trong vòng 24h tới.
+                </h3>
+            </div>
+            <div class="flex flex-wrap lg:flex-nowrap gap-16  -mx-3 mb-6">
+                <div class="w-full  lg:w-7/12 mb-6 md:mb-0">
+                    <form
+                        id="myForm"
+                        class="w-full"
+                        hx-post="https://5d82e184c9e3410014070df1.mockapi.io/api/contact"
+                        hx-trigger="submit"
+                        hx-target="#result"
+                        hx-swap="outerHTML">
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide prose dark:prose-invert text-xs font-bold mb-2" for="grid-password">
+                                    Họ và tên *
+                                </label>
+                                <input
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight
+                                    focus:outline-none focus:bg-white"
+                                    id="grid-first-name"
+                                    type="text"
+                                    name="username"
+                                    placeholder="Jane"/>
+                            {# <p class="text-red-500 text-xs italic">Họ và tên không hợp lệ.</p> #}
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide prose dark:prose-invert text-xs font-bold mb-2" for="grid-first-name">
+                                    Email *
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight
+                                        focus:outline-none focus:bg-white"
+                                    id="grid-first-name"
+                                    type="text"
+                                    placeholder="Jane"></div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="block uppercase tracking-wide prose dark:prose-invert text-xs font-bold mb-2" for="grid-last-name">
+                                    Số điện thoại *
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight
+                                        focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="grid-last-name"
+                                    type="text"
+                                    placeholder="Doe"></div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide prose dark:prose-invert text-xs font-bold mb-2" for="grid-password">
+                                    Nội dung
+                                </label>
+                                <textarea
+                                    rows="10"
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight
+                                        focus:outline-none focus:bg-white focus:border-gray-500"></textarea>
+                            </div>
+                            <div class="flex flex-col md:flex-row justify-between w-full px-3">
+                                <div class="md:flex md:items-center">
+                                    <label class="block text-gray-500 font-bold">
+                                        <input class="mr-2 leading-tight" type="checkbox">
+                                        <span class="text-sm">
+                                            Gửi thông báo mới nhất cho tôi!
+                                        </span>
+                                    </label>
+                                </div>
+                                <button
+                                    class="flex shadow bg-blue-400 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-3
+                                        rounded text-center mx-auto md:mx-0 mt-2 md:mt-0"
+                                    type="submit">
+                                    <svg
+                                        id="loadingStatus"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display:none;"
+                                        class="icon icon-tabler icon-tabler-loader-2 mr-1 animate-spin"
+                                        width="24"
+                                        height="24"
+                                        viewbox="0 0 24 24"
+                                        stroke-width="2"
+                                        stroke="currentColor"
+                                        fill="none"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a9 9 0 1 0 9 9"/>
+                                    </svg>
+                                    Gửi ngay
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div
+                        id="result"><!-- Kết quả sẽ được thay thế vào đây sau khi form được submit -->
+                    </div>
+                </div>
+                <div class="w-full lg:w-5/12 mb-6 md:mb-0">
+                    <ul role="list" class="divide-y divide-gray-100">
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="mb-1 text-gray-400 caption">SỐ ĐIỆN THOẠI</p>
+                                    <h5 class="text-2xl font-medium prose dark:prose-invert">0868 963 075</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="mb-1 text-gray-400 caption">EMAIL</p>
+                                    <h5 class="text-2xl font-medium prose dark:prose-invert">asp@tcu.edu.vn</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="mb-1 text-gray-400 caption">VĂN PHÒNG</p>
+                                    <h5 class="text-2xl font-medium prose dark:prose-invert">Số 75 Đường 2 tháng 4, Phường Vĩnh Hòa, TP Nha Trang, Tỉnh
+                                        Khánh Hòa</h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-wrap gap-4">
+                        <li class="text-md mt-3 transition bg-blue-400 hover:bg-red-400 p-1 rounded-md ease-in-out delay-150  duration-300">
+                            <a href="https://www.facebook.com/congvienphanmemquandoi" class="text-2xl text-white  dark:text-gray-300  ">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-brand-meta"
+                                    width="32"
+                                    height="32"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 10.174c1.766 -2.784 3.315 -4.174 4.648 -4.174c2 0 3.263 2.213 4 5.217c.704 2.869 .5 6.783 -2 6.783c-1.114 0 -2.648
+                                        -1.565 -4.148 -3.652a27.627 27.627 0 0 1 -2.5 -4.174z"/><path d="M12 10.174c-1.766 -2.784 -3.315 -4.174 -4.648 -4.174c-2 0 -3.263 2.213 -4 5.217c-.704 2.869 -.5 6.783 2 6.783c1.114 0
+                                    2.648 -1.565 4.148 -3.652c1 -1.391 1.833 -2.783 2.5 -4.174z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="text-md mt-3 transition bg-blue-400 hover:bg-red-400 p-1 rounded-md ease-in-out delay-150  duration-300">
+                            <a href="https://www.facebook.com/congvienphanmemquandoi" class="text-2xl text-white  dark:text-gray-300  ">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-brand-instagram"
+                                    width="32"
+                                    height="32"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16.5 7.5l0 .01"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="text-md mt-3 transition bg-blue-400 hover:bg-red-400 p-1 rounded-md ease-in-out delay-150  duration-300">
+                            <a href="https://www.facebook.com/congvienphanmemquandoi" class="text-2xl text-white  dark:text-gray-300  ">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-brand-linkedin"
+                                    width="32"
+                                    height="32"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

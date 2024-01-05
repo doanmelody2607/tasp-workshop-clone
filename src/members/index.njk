@@ -1,0 +1,40 @@
+---
+layout: layouts/layout.njk
+title: Page Members
+---
+
+<div class="container mx-auto">
+    {%- set lazyImage = "data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201%201'%20height%3D'500'%20width%3D'960'%20style%3D'background-color%3Argb(203%2C213%2C224)'%2F%3E" -%}
+    {% for group in collections.memberByGroup %}
+        <h2 class="text-3xl font-bold leading-normal text-slate-900 dark:text-white mt-0 mb-3 text-center my-2">{{ group.groupName |  convertToGroupName }}</h2>
+        <div class=" divide-gray-100 grid grid-cols-1 border-b-2 mb-3  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
+            {% for member in group.members %}
+                <div class="py-5">
+                    <div class="flex flex-col justify-center items-center min-w-0 gap-4">
+                        <a
+                            href="/members/{{ member.data.name | slugify }}"
+                            class="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 prose dark:prose-invert">
+                            <img class="w-[200px] h-[200px] flex-none rounded-full bg-gray-50 lazy object-cover object-center" src="{{ lazyImage }}" data-src="{% if member.data.image %}{{ member.data.image | url }}{% else %}{{ '/assets/img/no-image.png' | url }}{% endif %}" alt="{{ name }}"/>
+                        </a>
+                    </a>
+                    <div class="min-w-0 flex-auto">
+                        <a
+                            href="/members/{{ member.data.name | slugify }}"
+                            class="text-xl font-semibold leading-6 ease-in-out delay-300 hover:-translate-y-1 hover:scale-110 duration-300 prose
+                                dark:prose-invert">{{ member.data.name }}</a>
+                        <p class=" truncate text-xs leading-5 text-gray-500">{{ member.data.email }}</p>
+                    </div>
+                </div>
+                <ul class="network-icon flex gap-2 justify-center text-center mt-2" aria-hidden="true">
+                    {% for social in member.data.socials %}
+                        {% include "partials/icon-grid.njk" %}
+                    {% endfor %}
+                </ul>
+                {# <div class="hidden shrink-0 sm:flex sm:flex-col">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="text-sm leading-6 text-gray-900 mb-2">{{ member.data.role }}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {% include "partials/icons.njk" %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> #}
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}</div>

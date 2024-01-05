@@ -1,0 +1,48 @@
+---
+layout: layouts/layout.njk
+pagination:
+    data: collections.pagedPosts
+    size: 1
+    alias: paged
+permalink: '/posts/{% if paged.number > 1 %}page-{{ paged.number }}/{% endif %}index.html'
+---
+
+<div class="container py-[3.75rem]">
+    <div class="block lg:flex border-[1px] border-gray-300 dark:border-none dark:shadow-2xl rounded-sm xl:py-10">
+        <div class="basis-1/2">
+            <img
+                src="../assets/img/posts/eleventy-plugin-lazyimages.png"
+                alt="Product screenshot"
+                class="lg:w-full lg:h-full lg:object-contain"
+            />
+        </div>
+
+        <div class="basis-1/2 p-10 text-[#1A202C]">
+            <div class="flex justify-between text-sm uppercase dark:text-white/60">
+                <p>Tuesday 13 May, 2022</p>
+                <p>By John Hunau Deo</p>
+            </div>
+
+            <h4 class="mt-4 text-2xl font-bold dark:text-white">The Impact of Technology</h4>
+
+            <p class="mt-4 tracking-[.05em] line-clamp-4 dark:text-white/60">
+                Một plugin cho Eleventy, giúp tối ưu hóa tải ảnh trong ứng dụng web của bạn bằng cách thêm tính năng tải
+                ảnh chậm (lazy loading). Lazy loading giúp giảm thời gian tải trang bằng cách chỉ tải ảnh khi chúng sắp
+                xuất hiện trong tầm nhìn của người dùng.
+            </p>
+
+            <button
+                class="mt-6 py-4 px-12 bg-[#FFD2A4] text-black uppercase rounded-lg transition duration-300 hover:bg-orange-300"
+            >
+                <a href="" class="tracking-[.05em]">Xem thêm</a>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container py-[3.75rem]">
+    <h2 class="text-3xl font-bold uppercase text-black text-center dark:text-white">Bài viết</h2>
+
+    <div class="mt-12">{% include "partials/post-grid.njk" %}</div>
+    {% if collections.posts.length > site.paginate %} {% include "partials/paginator.njk" %} {% endif %}
+</div>

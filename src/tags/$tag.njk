@@ -1,0 +1,35 @@
+---
+layout: layouts/layout.njk
+eleventyExcludeFromCollections: true
+pagination:
+    data: collections.pagedPostsByTag
+    size: 1
+    alias: paged
+permalink: "tags/{{ paged.tagName }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}index.html"
+eleventyComputed:
+  title: "Tag | {{paged.tagName | capitalize}}"
+---
+
+<h1 class="flex items-center gap-2 text-3xl font-bold leading-normal text-slate-900 dark:text-white mt-0 mb-3">Tag:
+    {{ paged.tagName | capitalize }}
+  <a href="{{ site.url }}/tags/{{ paged.tagName }}/index.xml" target="_blank">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-rss"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M4 4a16 16 0 0 1 16 16"/><path d="M4 11a9 9 0 0 1 9 9"/>
+    </svg>
+  </a>
+</h1>
+<div class="flex flex-wrap -mx-2">
+  {% include "partials/post-grid.njk" %}
+</div>
+{% if collections.tagList[paged.tagName] > site.paginate %}
+  {% include "partials/paginator.njk" %}
+{% endif %}

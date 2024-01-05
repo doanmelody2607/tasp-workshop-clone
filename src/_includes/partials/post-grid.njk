@@ -1,0 +1,50 @@
+{%- set lazyImage =
+"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201%201'%20height%3D'500'%20width%3D'960'%20style%3D'background-color%3Argb(203%2C213%2C224)'%2F%3E"
+-%}
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for post in paged.posts %}
+    <div class="group rounded shadow-md h-full dark:border-[1px] dark:border-gray-800 flex flex-col">
+        <div class="basis-6/12 overflow-hidden min-h-[224px] max-h-[224px]">
+            <a class="block" href="{{ post.url | url }}">
+                <img
+                    class="w-full h-full lazy transition duration-300 ease-linear group-hover:scale-105"
+                    src="{{ lazyImage }}"
+                    data-src="{% if post.data.thumb %}{{ post.data.thumb | url }}{% else %}{{
+                        '/assets/img/no-image.png' | url
+                    }}{% endif %}"
+                    alt="This post thumbnail"
+                />
+            </a>
+        </div>
+        <div class="basis-6/12 p-5 flex flex-col justify-between">
+            {% if post.data.tags %}
+            <div class="">
+                {% for tag in post.data.tags %}
+                <a
+                    href="{{ '/tags/' | url }}{{ tag }}"
+                    class="inline-block bg-[#4B6BFB0D]/5 rounded-md px-3 py-1 text-sm font-medium text-[#4B6BFB] m-0.5 hover:bg-[#3E98F9] hover:text-white transition ease-in-out duration-300 prose dark:prose-invert"
+                    >#{{ tag }}</a
+                >
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h2 class="font-semibold text-lg mt-4">
+                <a class="text-slate-900 hover:text-slate-700 dark:text-white" href="{{ post.url | url }}">{{
+                    post.data.title
+                }}</a>
+            </h2>
+            <p class="text-slate-800 dark:text-gray-300 line-clamp-2">
+                {% if post.data.description %}
+                {{ post.data.description }}
+                {% else %}
+                {{ post.templateContent | striptags | truncate(90, true) }}
+                {% endif %}
+            </p>
+            <p class="text-[#97989F] dark:text-gray-400 mt-6" title="Published date">
+                {{ post.data.page.date | readableDate }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
